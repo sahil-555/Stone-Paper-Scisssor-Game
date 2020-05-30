@@ -1,0 +1,80 @@
+import random
+List=["s","p","x"]
+
+no_of_chance=10
+chance=0
+computer_point=0
+your_point=0
+
+print("Stone Paper Scissor Begin")
+print(" s : stone \n p: paper \n x: scissor")
+print("please enter your choice : ")
+
+while(chance<no_of_chance):
+    _input=input()
+    _random=random.choice(List)
+
+    if(_input==_random):
+        print("Tie,Both gets 0 point")
+    #if user enters stone
+    elif(_input=="s" and _random=="p"):
+        computer_point=computer_point+1
+        print(f"your guess is {_input} and computer guess is {_random} \n")
+        print(f"computer wins 1 point \n")
+        print(f"now the your score is {your_point} and computer score is {computer_point} \n")
+
+    elif(_input=="s"and _random=="x"):
+        your_point=your_point+1
+        print(f"your guess is {_input} and computer guess is {_random} \n")
+        print(f"you wins 1 point \n")
+        print(f"now your score is {your_point} and conputer score is {computer_point}")
+
+    #if user enters paper
+    elif(_input=="p" and _random=="s"):
+        your_point = your_point + 1
+        print(f"your guess is {_input} and computer guess is {_random} \n")
+        print(f"you wins 1 point \n")
+        print(f"now your score is {your_point} and conputer score is {computer_point}")
+
+    elif(_input=="p"and _random=="x"):
+        computer_point = computer_point + 1
+        print(f"your guess is {_input} and computer guess is {_random}")
+        print(f"computer wins 1 point \n")
+        print(f"now the your score is {your_point} and computer score is {computer_point} \n")
+
+    #if user enters scissors
+    elif(_input=="x" and _random=="s"):
+        computer_point = computer_point + 1
+        print(f"your guess is {_input} and computer guess is {_random}")
+        print(f"computer wins 1 point \n")
+        print(f"now the your score is {your_point} and computer score is {computer_point} \n")
+
+    elif(_input=="x" and _random=="p"):
+        your_point = your_point + 1
+        print(f"your guess is {_input} and computer guess is {_random} \n")
+        print(f"you wins 1 point \n")
+        print(f"now your score is {your_point} and conputer score is {computer_point}")
+
+    else:
+        print("Wrong input")
+
+    chance=chance+1
+    print(f"you have completed {chance} chance and now left are {no_of_chance-chance} \n")
+    print("please choose again : s: stone  P: paper  x: scissor")
+
+print("Game over")
+
+if(computer_point==your_point):
+    print("Game Tie")
+elif(computer_point>your_point):
+    print("Computer Wins")
+else:
+    print("You Won the game,Congratulations!!")
+print(f"your point is {your_point} and computer point is {computer_point}")
+
+
+
+
+
+
+
